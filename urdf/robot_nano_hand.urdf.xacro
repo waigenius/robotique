@@ -33,28 +33,132 @@ name="robot_nano_hand_teleop">
 
         </inertial>
 
-    </link> 
-
+    </link>
 
 
     <!-- Palm link -->
+    <link name="palm_link">
+        <visual>
+            <origin xyz="0 0 0.132" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="file:///$(find robot_nano_hand_teleop)/models/robot_nano_hand_palm.stl" scale="1 1 1"/>
+            <geometry>
+            <material name="green"/>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="file:///$(find robot_nano_hand_teleop)/models/robot_nano_hand_palm.stl" scale="1 1 1" />
+            <geometry>
+        </collision>
+
+    </link> 
 
 
     <!-- Palm joint -->
 
-
-    <joint name="my_joint" type="continuous">
+    <joint name="base_palm_joint" type="revolute">
         <origin xyz="0 0 0.10" rpy="0 0 0" />
         <parent link="base_link" />
-        <child link="hood_link" />
-        <limit effort="effort_value" velocity="velocity_value" lower="lower_limit" upper="upper_limit" />
+        <child link="palm_link" />
+        <limit lower="${10*M_PI/180}  upper=${20*M_PI/180} />
     </joint>
 
-    <!-- Macro finger -->
 
-    <xacro:finger parent="base_link" prefix="finger1">
-        <origin xyz="0 0 0" rpy="0 0  ${M_PI/2}" />
-    <xacro:finger>
+
+    <!-- Finger1_1_link -->
+    <link name="finger1_1_link">
+        <visual>
+            <origin xyz="0.15141 -0.034337 0.105315" rpy="-${-241.826*M_PI/180} ${96.5038*M_PI/180} ${306.548*M_PI/180}" />
+            <geometry>
+                <mesh filename="file:///$(find robot_nano_hand_teleop)/models/robot_nano_hand_finger1_link1.stl" scale="1 1 1"/>
+            <geometry>
+            <material name="green"/>
+        </visual>
+
+    </link> 
+
+    <!-- Finger1_1 joint -->
+    <joint name="base_palm_finger1_1_joint" type="revolute">
+        <origin xyz="0.15141 -0.034337 0.105315" rpy="-${-241.826*M_PI/180} ${96.5038*M_PI/180} ${306.548*M_PI/180}" />
+        <parent link="palm_link" />
+        <child link="finger1_1_link" />
+        <limit lower=${10*M_PI/180} upper=${20*M_PI/180}  />
+    </joint>
+
+    
+    <!-- Finger1_2_link -->
+    <link name="finger1_2_link">
+        <visual>
+            <origin xyz="-0.002487 0 0" rpy="-${9.00686*M_PI/180} ${-0.124082*M_PI/180} ${89.8118*M_PI/180}" />
+            <geometry>
+                <mesh filename="file:///$(find robot_nano_hand_teleop)/models/robot_nano_hand_finger1_link2.stl" scale="1 1 1"/>
+            <geometry>
+            <material name="green"/>
+        </visual>
+
+    </link> 
+
+    <!-- Finger1_2_joint -->
+    <joint name="base_palm_finger1_2_joint" type="revolute">
+        origin xyz="-0.002487 0 0" rpy="-${9.00686*M_PI/180} ${-0.124082*M_PI/180} ${89.8118*M_PI/180}" />
+        <parent link="finger1_1_link" />
+        <child link="finger1_2_link" />
+        <limit lower=${10*M_PI/180}  upper=${20*M_PI/180}  />
+    </joint>
+
+
+    <!-- Finger1_3_link -->
+    <link name="finger1_3_link">
+        <visual>
+            <origin xyz="-0.040844 0.000126 0.00357" rpy="-${8.94359*M_PI/180} ${0.091051*M_PI/180} ${89.9831*M_PI/180}" />
+            <geometry>
+                <mesh filename="file:///$(find robot_nano_hand_teleop)/models/robot_nano_hand_finger1_link3.stl" scale="1 1 1"/>
+            <geometry>
+            <material name="green"/>
+        </visual>
+
+    </link> 
+
+    <!-- Finger1_3_joint -->
+    <joint name="base_palm_finger1_3_joint" type="revolute">
+        <origin xyz="-0.040844 0.000126 0.00357" rpy="-${8.94359*M_PI/180} ${0.091051*M_PI/180} ${89.9831*M_PI/180}" />
+        <parent link="finger1_2_link" />
+        <child link="finger1_3_link" />
+        <limit lower=${10*M_PI/180}  upper=${20*M_PI/180}  />
+    </joint>
+
+
+    <!-- Finger1_4_link -->
+    <link name="finger1_4_link">
+        <visual>
+            <origin xyz="-0.029121 0.000013 0.002736" rpy="-${11.2847*M_PI/180} ${-0.04374*M_PI/180} ${89.947*M_PI/180}" />
+            <geometry>
+                <mesh filename="file:///$(find robot_nano_hand_teleop)/models/robot_nano_hand_finger1_link3.stl" scale="1 1 1"/>
+            <geometry>
+            <material name="green"/>
+        </visual>
+
+    </link> 
+
+    <!-- Finger1_4_joint -->
+    <joint name="base_palm_finger1_4_joint" type="revolute">
+        <origin xyz="-0.029121 0.000013 0.002736" rpy="-${11.2847*M_PI/180} ${-0.04374*M_PI/180} ${89.947*M_PI/180}" />
+        <parent link="finger1_3_link"/>
+        <child link="finger1_4_link" />
+        <limit lower=${10*M_PI/180}  upper=${20*M_PI/180}  />
+    </joint>
+
+
+
+
+    <!-- Macro finger -->
+    <xacro:finger parent="base_link" prefix="finger1" number=1 lower="lower_limit" upper="upper_limit" >
+        <origin xyz="0.15141 -0.034337 0.105315" rpy="-${-241.826*M_PI/180} ${96.5038*M_PI/180} ${306.548*M_PI/180} ${306.548*M_PI/180}" />
+        
+    </xacro:finger>
+
 
 <robot>
      
