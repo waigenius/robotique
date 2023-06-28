@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<robot name="robot_nano_hand_teleop">
+
+
+    <link name="base_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57"/>
+            <geometry>
+                <mesh filename="file:///$(find robot_nano_hand_teleop)/models/robot_nano_hand_base.stl" scale="1 1 1"/>
+            <geometry>
+            <material name="green"/>
+        </visual>
+
+    </link>
+
+
+    <!-- Palm link -->
+    <link name="palm_link">
+        <visual>
+            <origin xyz="0 0 0.132" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="file:///$(find robot_nano_hand_teleop)/models/robot_nano_hand_palm.stl" scale="1 1 1"/>
+            <geometry>
+           
+        </visual>
+
+    </link> 
+
+
+    <!-- Palm joint -->
+    <joint name="base_palm_joint" type="revolute">
+        <origin xyz="0 0 0.132" rpy="0 0 0" />
+        <parent link="base_link" />
+        <child link="palm_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+
+
+
+    <!-- Finger1-->
+    <link name="finger1_1_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///$(find robot_nano_hand_teleop)/models/robot_nano_hand_finger1_link1.stl" scale="1 1 1"/>
+            <geometry>   
+        </visual>
+    </link> 
+
+    <joint name="base_palm_finger1_1_joint" type="revolute">
+        <origin xyz="0.15141 -0.034337 0.105315" rpy="-4.22 1.68 5.35" />
+        <parent link="palm_link" />
+        <child link="finger1_1_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+
+    <link name="finger1_2_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///$(find robot_nano_hand_teleop)/models/robot_nano_hand_finger1_link2.stl" scale="1 1 1"/>
+            <geometry>
+        </visual>
+
+    </link> 
+
+    <joint name="base_palm_finger1_2_joint" type="revolute">
+        origin xyz="-0.002487 0 0" rpy="0.1572 -0.0022 1.57" />
+        <parent link="finger1_1_link" />
+        <child link="finger1_2_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+
+
+    <link name="finger1_3_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///$(find robot_nano_hand_teleop)/models/robot_nano_hand_finger1_link3.stl" scale="1 1 1"/>
+            <geometry>
+        </visual>
+    </link> 
+
+    <joint name="base_palm_finger1_3_joint" type="revolute">
+        <origin xyz="-0.040844 0.000126 0.00357" rpy="0.16 0.0016 1.57" />
+        <parent link="finger1_2_link" />
+        <child link="finger1_3_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+
+
+    <!-- Finger1_4_link -->
+    <link name="finger1_4_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///$(find robot_nano_hand_teleop)/models/robot_nano_hand_finger1_link3.stl" scale="1 1 1"/>
+            <geometry>
+        </visual>
+
+    </link> 
+
+
+    <joint name="base_palm_finger1_4_joint" type="revolute">
+        <origin xyz="-0.029121 0.000013 0.002736" rpy="0.2 -0.008 1.57" />
+        <parent link="finger1_3_link"/>
+        <child link="finger1_4_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+
+
+<robot>
+     
+
