@@ -183,6 +183,221 @@
         <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
     </joint>
    <!--/Finger2--> 
+
+
+    <!-- Finger3-->
+    <link name="finger3_1_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///home/wai/workspace/ros2_ws/src/robot_nano_hand_teleop/models/robot_nano_hand_finger3_link1.stl" scale="1 1 1"/>
+            </geometry>   
+        </visual>
+    </link> 
+
+    <joint name="palm_finger31_joint" type="revolute">
+        <origin xyz="0.00513 0.008315 0.123543" rpy="0 -0.014913 0" />
+        <parent link="palm_link" />
+        <child link="finger3_1_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+
+    <link name="finger3_2_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///home/wai/workspace/ros2_ws/src/robot_nano_hand_teleop/models/robot_nano_hand_finger3_link2.stl" scale="1 1 1"/>
+            </geometry>
+        </visual>
+
+    </link> 
+
+    <joint name="finger312_joint" type="revolute">
+        <origin xyz="0 0 0.0026" rpy="0 0 0" />
+        <parent link="finger3_1_link" />
+        <child link="finger3_2_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+
+
+    <link name="finger3_3_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///home/wai/workspace/ros2_ws/src/robot_nano_hand_teleop/models/robot_nano_hand_finger3_link3.stl" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link> 
+
+    <joint name="finger323_joint" type="revolute">
+        <origin xyz="-0.003344 0 0.047682" rpy="0 0 0" />
+        <parent link="finger3_2_link" />
+        <child link="finger3_3_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+
+    <link name="finger3_4_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///home/wai/workspace/ros2_ws/src/robot_nano_hand_teleop/models/robot_nano_hand_finger3_link4.stl" scale="1 1 1"/>
+            </geometry>
+        </visual>
+
+    </link> 
+
+
+    <joint name="finger334_joint" type="revolute">
+        <origin xyz="-0.002127 0 0.034033" rpy="0 0 0" />
+        <parent link="finger3_3_link"/>
+        <child link="finger3_4_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+   <!--/Finger3-->
+
+
+    <!-- Finger4-->
+    <link name="finger4_1_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///home/wai/workspace/ros2_ws/src/robot_nano_hand_teleop/models/robot_nano_hand_finger4_link1.stl" scale="1 1 1"/>
+            </geometry>   
+        </visual>
+    </link> 
+
+    <joint name="palm_finger41_joint" type="revolute">
+        <origin xyz="0.00801 0.030342 0.117987" rpy="-0.085055 -0.001531 -0.102542" />
+        <parent link="palm_link" />
+        <child link="finger4_1_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+
+    <link name="finger4_2_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///home/wai/workspace/ros2_ws/src/robot_nano_hand_teleop/models/robot_nano_hand_finger4_link2.stl" scale="1 1 1"/>
+            </geometry>
+        </visual>
+
+    </link> 
+
+    <joint name="finger412_joint" type="revolute">
+        <origin xyz="0 0 0.0026" rpy="0 0 0" />
+        <parent link="finger4_1_link" />
+        <child link="finger4_2_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+
+
+    <link name="finger4_3_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///home/wai/workspace/ros2_ws/src/robot_nano_hand_teleop/models/robot_nano_hand_finger4_link3.stl" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link> 
+
+    <joint name="finger423_joint" type="revolute">
+        <origin xyz="-0.003183 0 0.045388" rpy="0 0 0" />
+        <parent link="finger4_2_link" />
+        <child link="finger4_3_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+
+    <link name="finger4_4_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///home/wai/workspace/ros2_ws/src/robot_nano_hand_teleop/models/robot_nano_hand_finger4_link4.stl" scale="1 1 1"/>
+            </geometry>
+        </visual>
+
+    </link> 
+
+
+    <joint name="finger434_joint" type="revolute">
+        <origin xyz="-0.002027 0 0.03436" rpy="0 0 0" />
+        <parent link="finger4_3_link"/>
+        <child link="finger4_4_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+   <!--/Finger4--> 
+
+
+    <!-- Finger5 Thumb-->
+    <link name="finger5_1_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///home/wai/workspace/ros2_ws/src/robot_nano_hand_teleop/models/robot_nano_hand_finger5_link1.stl" scale="1 1 1"/>
+            </geometry>   
+        </visual>
+    </link> 
+
+    <joint name="palm_finger51_joint" type="revolute">
+        <origin xyz="0.032235 0.011296 0.063093" rpy="-0.11638 0.102391 -0.414915" />
+        <parent link="palm_link" />
+        <child link="finger5_1_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+
+    <link name="finger5_2_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///home/wai/workspace/ros2_ws/src/robot_nano_hand_teleop/models/robot_nano_hand_finger5_link2.stl" scale="1 1 1"/>
+            </geometry>
+        </visual>
+
+    </link> 
+
+    <joint name="finger512_joint" type="revolute">
+        <origin xyz="0 0.008 -0.0023" rpy="0 0 0" />
+        <parent link="finger5_1_link" />
+        <child link="finger5_2_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+
+
+    <link name="finger5_3_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///home/wai/workspace/ros2_ws/src/robot_nano_hand_teleop/models/robot_nano_hand_finger5_link3.stl" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link> 
+
+    <joint name="finger523_joint" type="revolute">
+        <origin xyz="0 0.002993 0.043897" rpy="0 0 0" />
+        <parent link="finger5_2_link" />
+        <child link="finger5_3_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+
+    <link name="finger5_4_link">
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 1.57" />
+            <geometry>
+                <mesh filename="file:///home/wai/workspace/ros2_ws/src/robot_nano_hand_teleop/models/robot_nano_hand_finger5_link4.stl" scale="1 1 1"/>
+            </geometry>
+        </visual>
+
+    </link> 
+
+
+    <joint name="finger534_joint" type="revolute">
+        <origin xyz="0.000012 0.001 0.037986" rpy="0 0 0" />
+        <parent link="finger5_3_link"/>
+        <child link="finger5_4_link" />
+        <limit effort="10" velocity="10" lower="0.0"  upper="1.57" />
+    </joint>
+   <!--/Finger3--> 
+
+   
 </robot>
      
 

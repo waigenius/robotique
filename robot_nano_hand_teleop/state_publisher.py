@@ -43,13 +43,29 @@ class StatePublisher(Node):
                     'palm_finger21_joint',
                     'finger212_joint',
                     'finger223_joint',
-                    'finger234_joint'
+                    'finger234_joint',
+
+                    'palm_finger31_joint',
+                    'finger312_joint',
+                    'finger323_joint',
+                    'finger334_joint',
+
+                    'palm_finger41_joint',
+                    'finger412_joint',
+                    'finger423_joint',
+                    'finger434_joint',
+
+                    'palm_finger51_joint',
+                    'finger512_joint',
+                    'finger523_joint',
+                    'finger534_joint'
                 ]
 
                 joint_state.position = [angle, 0.0, 0.0, 0.0, 0.0,
+                                        0.0, 0.0, 0.0, 0.0,
+                                        0.0, 0.0, 0.0, 0.0,
+                                        0.0, 0.0, 0.0, 0.0,
                                         0.0, 0.0, 0.0, 0.0
-
-                
                 ]
 
                 #send the joint state
