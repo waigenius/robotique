@@ -1,0 +1,41 @@
+base_link visual origin : <origin xyz="0 0 0" rpy="0 0 0"/>
+
+base_palm_joint origin : <origin xyz="0 0 0.132" rpy="0 0 0"/>
+
+On pourra nomer les joints avec la convention:
+	permier chiffre : numéro de doigt
+	deuxième chiffre : numéro du link parent
+	troisième chiffre : numéro du link child
+Exemple: finger112_joint est un joint du finger 1 entre les link 1 et 2
+
+Finger 1 (little finger)
+	palm_finger11_joint : <origin xyz="0.014588 -0.034298 0.105371" rpy="0.134884 0.077146 0.149703"/>
+	finger112_joint : <origin xyz="0 0 0.0026" rpy="0 0 0"/>
+	finger123_joint : <origin xyz="0.00357 0.000126 0.040844" rpy="0 0 0"/>
+	finger134_joint : <origin xyz="0.006306 0.000139 0.029247" rpy="0 0 0"/>
+
+Finger 2
+	palm_finger21_joint : <origin xyz="0.007772 -0.013612 0.117984" rpy="0.062643 -0.000111 0.073654"/>
+	finger212_joint : <origin xyz="0 0 0.0026" rpy="0 0 0"/>
+	finger223_joint : <origin xyz="-0.003183 0 0.045388" rpy="0 0 0"/>
+	finger234_joint : <origin xyz="-0.002027 0 0.032436" rpy="0 0 0"/>
+
+Finger 3
+	palm_finger31_joint : <origin xyz="0.00513 0.008315 0.123543" rpy="0 -0.014913 0"/>
+	finger312_joint : <origin xyz="0 0 0.0026" rpy="0 0 0"/>
+	finger323_joint : <origin xyz="-0.003344 0 0.047682" rpy="0 0 0"/>
+	finger334_joint : <origin xyz="-0.002127 0 0.034033" rpy="0 0 0"/>
+
+Finger 4
+	palm_finger41_joint : <origin xyz="0.00801 0.030342 0.117987" rpy="-0.085055 -0.001531 -0.102542"/>
+	finger412_joint : <origin xyz="0 0 0.0026" rpy="0 0 0"/>
+	finger423_joint : <origin xyz="-0.003183 0 0.045388" rpy="0 0 0"/>
+	finger434_joint : <origin xyz="-0.002027 0 0.032436" rpy="0 0 0"/>
+
+Finger 5 (thumb)
+	palm_finger51_joint : <origin xyz="0.032235 0.011296 0.063093" rpy="-0.11638 0.102391 -0.414915"/>
+	finger512_joint: <origin xyz="0 0.008 -0.0023" rpy="0 0 0"/>
+	finger523_joint: <origin xyz="0 0.002993 0.043897" rpy="0 0 0"/>
+	finger534_joint: <origin xyz="0.000012 0.001 0.037986" rpy="0 0 0"/>
+
+
