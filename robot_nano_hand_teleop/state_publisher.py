@@ -18,7 +18,7 @@ class StatePublisher(Node):
         self.nodeName = self.get_name()
         self.get_logger().info("{0} started".format(self.nodeName))
 
-        degree = pi /180.0
+       
         loop_rate = self.create_rate(30)
 
         #message declarations
@@ -71,8 +71,12 @@ class StatePublisher(Node):
                 #send the joint state
                 self.joint_pub.publish(joint_state)
 
+                if(angle < pi/2):
+                    angle = angle + 0.001
+                else:
+                    angle = angle - 0.001
                 #Create new robot state
-                angle = angle + 0.001
+                #angle = angle + 0.001
 
                 #This will adjust as needed per iteration 
                 loop_rate.sleep()

@@ -92,3 +92,7 @@ model.compile(loss="categorical_crossentropy",
 model.fit(X_train, y_train, validation_data = (X_test, y_test), epochs=10, batch_size = 128,callbacks=[early_stop])
 
 model.summary()
+
+loaded_model = keras.models.load_model('hand_trained_model.h5')
+
+loaded_model.summary()
